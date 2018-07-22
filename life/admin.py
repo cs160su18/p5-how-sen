@@ -5,3 +5,5 @@ from life.models import *
 admin.site.register(Group)
 admin.site.register(Thread)
 admin.site.register(User)
+admin.site.register(Question)
+admin.site.register(Choice)

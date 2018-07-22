@@ -4,5 +4,11 @@ from django.core import serializers
 from life.models import *
 
 def index(request):
-  all_group= Group.object.all()
-  return render(request, 'life/index.html',{"group":all_group})
+  all_groups= Group.objects.all()
+  return render(request, 'life/index.html',{
+      "groups": all_groups,
+  })
+  
+  
+def group(request):
+  return render(request, "life/group.html")
