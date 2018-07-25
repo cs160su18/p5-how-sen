@@ -21,7 +21,9 @@ class Thread(models.Model):
   
 class User(models.Model):
   name = models.CharField(max_length = 100, blank = True, null = True)
-  fav = models.CharField(max_length = 100, blank = True, null = True)
+  password = models.CharField(max_length = 100, blank=True, null = True)
+  mood = models.CharField(max_length = 100, blank = True, null = True)
+  age = models.IntegerField();
     
 class Question(models.Model):
   question_text = models.CharField(max_length=200)
