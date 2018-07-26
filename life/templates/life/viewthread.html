@@ -1,4 +1,4 @@
-{% load static %}
+{%load static %}
 
 <!DOCTYPE html>
 
@@ -17,11 +17,11 @@
         height: 100vh;
         width: 100vw;
         margin: 0;
-        padding: 0;ß
+        padding: 0;
       }
       .title{
         font-size: 100px;
-        background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+        background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.1, #f2f), color-stop(0.2, #22f), color-stop(0.3, #2ff), color-stop(0.4, #2f2),color-stop(0.5, #2f2), color-stop(0.6, #ff2), color-stop(0.7, #f22) );
         background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
         color:transparent;
         -webkit-background-clip: text;
@@ -33,16 +33,16 @@
         text-align: center;
       }
       .btn-default{
-        background-color: coral;
-    border: none;
-    color: lightcyan;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    cursor: pointer;
-    border-radius: 30%;
+        background-color: cyan;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        cursor: pointer;
+        border-radius: 30%;
       }
       .post-form{
         font-size:30px;
@@ -51,16 +51,29 @@
 	</head>
 	<body>
     
-		<div class="title">
-      <p>Register </p>
+<div class="title">
+      <p>Thread </p>
     </div>
+    
+   
+
+		
+  
+      <div class="info">
+       {% for thread in threads %}
     <div>
-      <div class = "info">
-       <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }} 
-         <button type="submit" class="save btn btn-default">Save</button>
-        <button type="submit" class="save btn btn-default"><a href ="http://p5-how-sen-haosen537681.codeanyapp.com:8000/life/profile/">Go</a></button>
-    </form>
+
+        <p>name: {{ thread.name}} </p>
+        <p>subject: {{ thread.subject}} </p>
+        <p>email: {{ thread.email}} </p>
+        <p>comment: {{ thread.body|linebreaksbr }}</p>
+
+        <br>
+    </div>
+{% endfor %}
+      </div>
+      <div>
+       
       </div>
       <div>
         <button class="button"><img src="https://i.pinimg.com/originals/32/84/c5/3284c585c8075806fe9d4f582fd1fdf6.png" style="width:100px; padding: 35px;"></button>
@@ -69,7 +82,6 @@
         <button class="button"><img src="https://i.pinimg.com/564x/89/bd/78/89bd78721e3d26897a36425886ac4734.jpg" style="width:100px; padding: 35px;"></button>
         <button class="button"><img src="https://i.pinimg.com/564x/fb/48/8f/fb488f7cfde3481d8071bd28437d499e.jpg" style="width:100px; padding: 35px;"></button>
       </div>
-    </div>
 
 	</body>
 </html>

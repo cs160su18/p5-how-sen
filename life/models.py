@@ -23,14 +23,8 @@ class User(models.Model):
   name = models.CharField(max_length = 100, blank = True, null = True)
   password = models.CharField(max_length = 100, blank=True, null = True)
   mood = models.CharField(max_length = 100, blank = True, null = True)
-  age = models.IntegerField();
+  age = models.IntegerField(default='0',);
     
-class Question(models.Model):
-  question_text = models.CharField(max_length=200)
-  pub_date = models.DateTimeField('date published')
-
+class Login(models.Model):
+  name = models.CharField(max_length = 100, blank = True, null = True)
   
-class Choice(models.Model):
-  question = models.ForeignKey(Question, on_delete=models.CASCADE)
-  choice_text = models.CharField(max_length=200)
-  votes = models.IntegerField(default=0)

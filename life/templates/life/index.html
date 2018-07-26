@@ -12,38 +12,63 @@
 
 		<script src="{% static '/life/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static '/life/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
-<!--     <style type="text/css">
+    <style type="text/css">
       body{
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         margin: 0;
-        padding: 0;
+        padding: 0;ß
       }
       .title{
+        font-size: 100px;
+        background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.1, #f2f), color-stop(0.2, #22f), color-stop(0.3, #2ff), color-stop(0.4, #2f2),color-stop(0.5, #2f2), color-stop(0.6, #ff2), color-stop(0.7, #f22) );
+        background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+        color:transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
         text-align: center;
       }
-    </style> -->
+      .info{
+        height:70vh;
+        text-align: center;
+      }
+      .btn-default{
+        background-color: cyan;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        cursor: pointer;
+        border-radius: 30%;
+      }
+      .post-form{
+        font-size:30px;
+      }
+    </style>
 	</head>
 	<body>
     
-
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }} 
-        <!--<input type = "text"> -->
-        <button type="submit" class="save btn btn-default">Submit</button>
-    </form>
+<div class="title">
+      <p>Post Comment </p>
+    </div>
+    
     {% for group in groups %}
     <p>
       {{group.name}}
     </p>
     {% endfor %}
 
-<!-- 		<div class="title">
-      <h1>Thread </h1>
-    </div>
+		
     <div>
-      <div>
-       
+      <div class="info">
+       <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }} 
+        <!--<input type = "text"> -->
+        <button type="submit" class="save btn btn-default">Submit</button>
+    </form>
       </div>
       <div>
        
@@ -55,10 +80,10 @@
         <button class="button"><img src="https://i.pinimg.com/originals/32/84/c5/3284c585c8075806fe9d4f582fd1fdf6.png" style="width:100px; padding: 35px;"></button>
         <button class="button"><img src="https://i.pinimg.com/originals/50/52/35/505235a9a692b90249295a5935062d5c.png" style="width:100px; padding: 35px;"></button>
         <button class="button"><img src="https://i.pinimg.com/564x/69/b3/8d/69b38d44ce46d9c3699ce1b4547a6758.jpg" style="width:100px; padding: 35px;"></button>
-        <button class="button"><img src="https://i.pinimg.com/564x/89/bd/78/89bd78721e3d26897a36425886ac4734.jpg" style="width:100px; padding: 35px;"></button>
+        <button class="button"><a href="http://p5-how-sen-haosen537681.codeanyapp.com:8000/life/viewthread/"><img src="https://i.pinimg.com/564x/89/bd/78/89bd78721e3d26897a36425886ac4734.jpg" style="width:100px; padding: 35px;"></a></button>
         <button class="button"><img src="https://i.pinimg.com/564x/fb/48/8f/fb488f7cfde3481d8071bd28437d499e.jpg" style="width:100px; padding: 35px;"></button>
       </div>
     </div>
- -->
+
 	</body>
 </html>
